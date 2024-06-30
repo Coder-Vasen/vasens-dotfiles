@@ -1,0 +1,28 @@
+import = [
+  # "~/.config/alacritty/catppuccin_theme/catppuccin-mocha.toml",
+  # "~/.config/alacritty/themes/themes/midnight-haze.toml"
+  "~/.config/alacritty/custom_theme/midnight_dark.toml"
+]
+# "~/Applications/alacritty-master/dracula.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+# padding.x = 10
+# padding.y = 10
+#
+decorations = "Buttonless"
+dynamic_title = true
+opacity = 0.8
+blur = true
+option_as_alt = "Both"
+# blur = true
+
+[font]
+normal.family =  "JetBrainsMono Nerd Font"
+# normal.family = "MesloLGS NF"
+size = 16
+
+[cursor]
+style.blinking = "On"
