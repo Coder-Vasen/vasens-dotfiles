@@ -1,29 +1,49 @@
 return {
   {
     "christoomey/vim-tmux-navigator",
-    lazy=false
+    lazy = false,
   },
   {
     "nvimtools/none-ls.nvim",
     event = "VeryLazy",
-    dependencies = {"nvimtools/none-ls-extras.nvim"},
+    dependencies = { "nvimtools/none-ls-extras.nvim" },
     -- opts = function()
     --   return require "configs.null-ls"
     -- end,
-    config = function ()
-      require("configs.null-ls")
-    end
+    config = function()
+      require "configs.null-ls"
+    end,
   },
   {
     "stevearc/dressing.nvim",
-    event ="VeryLazy"
+    event = "VeryLazy",
   },
   {
     "folke/todo-comments.nvim",
-    dependencies = {"nvim-lua/plenary.nvim"},
-    opts = {}
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {},
   },
-    -- {
+  {
+    "hrsh7th/nvim-cmp",
+    config = function(_, opts)
+      local cmp = require "cmp"
+      opts.sources = {
+        { name = "copilot" },
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "nvim_lua" },
+        { name = "path" },
+      }
+
+      opts.mapping = {
+       ["<C-;>"] = cmp.mapping.close(),
+       -- ["Tab"
+      }
+      cmp.setup(opts)
+    end,
+  },
+  -- {
   --   "stevearc/conform.nvim",
   --   event = "BufWritePre", -- uncomment for format on save
   --   config = function()
@@ -67,7 +87,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-     require("nvchad.configs.lspconfig").defaults()
+      require("nvchad.configs.lspconfig").defaults()
       require "configs.lspconfig"
     end,
   },
@@ -92,7 +112,7 @@ return {
         "mypy",
         "ruff",
         "black",
-        "pylint"
+        "pylint",
       },
     },
   },

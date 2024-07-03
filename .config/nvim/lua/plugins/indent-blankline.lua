@@ -12,7 +12,8 @@ return {
       scope = {
         enabled = true,
         show_start = true
-      } 
+      },
+
     }
   end
 }
